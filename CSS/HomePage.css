@@ -1,0 +1,48 @@
+.hbutton,
+.donorbutton,
+.foodvendorbutton,
+.logisticsbutton,
+.logoutbutton
+{
+  background-color: white;
+    color: rgba (13, 20, 31, 1);
+    border-color:rgba (13, 20, 31, 1);
+    height: 50px;
+    width: 110px;
+    border-style: solid;
+    border-radius: 2px;
+    border-width: 1px;
+    cursor: pointer;
+    margin-right: 3px;
+    transition: background-color 0.15s, color 0.15s , opacity 0.15s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+  
+
+}
+
+
+.hbutton:hover,
+.donorbutton:hover,
+.foodvendorbutton:hover,
+.logisticsbutton:hover,
+.logoutbutton:hover
+{
+  background-color: rgba(13, 20, 31, 1);
+  color: white;
+  opacity: 0.9;
+}
+
+
+.hbutton:active,
+.donorbutton:active,
+.foodvendorbutton:active,
+.logisticsbutton:active,
+.logoutbutton:active
+{
+  opacity: 0.6 ;
+}
+
+.title{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
