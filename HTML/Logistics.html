@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title class="title">Logistics Partner Registration Form</title>
+  <link rel="stylesheet" href="/static/Logistics.css"> <!-- Link to your custom CSS file -->
+</head>
+
+<body>
+
+
+  <button class="hbutton" id="hbutton">Home </button>
+  <button class="donorbutton" id="donorbutton">Donor Form</button>
+  <button class="foodvendorbutton" id="foodvendorbutton">Vendor Form </button>
+
+  <script>
+      // Get references to the buttons
+      const button1 = document.getElementById('donorbutton');
+      const button2 = document.getElementById('foodvendorbutton');
+      const button3 = document.getElementById('hbutton');
+
+      // Add event listeners to the buttons
+      button3.addEventListener('click', () => {
+            window.location.href = 'HomePage.html'; // Replace 'page1.html' with the actual file path of the first webpage
+        });
+
+      button1.addEventListener('click', () => {
+          window.location.href = 'DonorApp.html'; // Replace 'page1.html' with the actual file path of the first webpage
+      });
+
+      button2.addEventListener('click', () => {
+          window.location.href = 'Foodvendor.html'; // Replace 'page2.html' with the actual file path of the second webpage
+      });
+
+  </script>
+
+  <h1 class="title">Logistics Regristration Form</h1>
+  <form id="dataForm" class="form-container">
+    <div class="form-row">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" name="name[]" id="name" class="form-input" required>
+    </div>
+    <div class="form-row">
+      <label for="companyName" class="form-label">Company Name</label>
+      <input type="text" name="companyName[]" id="companyName" class="form-input" required>
+    </div>
+    <div class="form-row">
+      <label for="address" class="form-label">Address</label>
+      <input type="text" name="address[]" id="address" class="form-input" required>
+    </div>
+    <div class="form-row">
+      <label for="contactEmail" class="form-label">Contact Email</label>
+      <input type="email" name="contactEmail[]" id="contactEmail" class="form-input" required>
+    </div>
+    <div class="form-row">
+      <label for="contactPhone" class="form-label">Contact Phone</label>
+      <input type="text" name="contactPhone[]" id="contactPhone" class="form-input" required>
+    </div>
+    <div class="form-row">
+      <label class="form-label">Logistics?</label>
+      <input type="checkbox" name="logistics[]" value="yes" class="form-checkbox">
+    </div>
+    <div class="form-row">
+      <label for="categories" class="form-label">Categories</label>
+      <input type="text" name="categories[]" id="categories" class="form-input">
+    </div>
+    <div class="form-row">
+      <label class="form-label">Driving License?</label>
+      <input type="checkbox" name="drivingLicense[]" value="yes" class="form-checkbox">
+    </div>
+    <div class="form-row">
+      <label for="otherLicense" class="form-label">Other License</label>
+      <input type="text" name="otherLicense[]" id="otherLicense" class="form-input">
+    </div>
+    <div class="form-row">
+      <label for="otherDetails" class="form-label">Other Details</label>
+      <input type="text" name="otherDetails[]" id="otherDetails" class="form-input">
+    </div>
+     
+    <button type="submit" class="form-button">Submit</button>
+  </form>
+  <div class="form-row">
+    <label class="form-label">Approved</label>
+    <input type="checkbox" name="approved[]" value="yes" class="form-checkbox">
+  </div>
+
+  
+</body>
+</html>
