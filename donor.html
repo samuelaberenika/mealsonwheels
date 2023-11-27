@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+  <!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor</title>
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/static/donor.css">
+    
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+
+    
+    <!--<title>Dashboard Sidebar Menu</title>--> 
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                  <img src="/static/IMG_6565.JPG" alt="">
+                    <!--<img src="logo.png" alt="">-->
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Sam</span>
+                    <span class="profession">Admin</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="HomePage.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bxs-user icon' ></i>
+                            <span class="text nav-text">Profile</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                      <a href="#">
+                          <i class='bx bx-badge-check icon'></i>
+                          <span class="text nav-text">Approval</span>
+                      </a>
+                  </li>
+
+                    <li class="nav-link">
+                        <a href="logistics.html">
+                            <i class='bx bx-file icon' ></i>
+                            <span class="text nav-text">Logistics Form</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="vendor.html">
+                            <i class='bx bx-file icon' ></i>
+                            <span class="text nav-text">Vendor Form</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="Login.html">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="home">
+        <div class="text">Donor Application Form</div>
+      
+        <div class="container">
+            
+            <div class="content">
+              <form method="POST" action="{{url_for('donor')}}">
+
+
+                <div class="user-details">
+                  <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter your name" required>
+                  </div>
+
+
+                  <div class="input-box">
+                    <span class="details">Address</span>
+                    <input type="text" placeholder="Enter your address" required>
+                  </div>
+
+
+                  <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="Enter your email" required>
+                  </div>
+
+
+                  <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="number" placeholder="Enter your number" required>
+                  </div>
+
+
+
+                  <div class="input-box">
+                    <span class="details">Donation Method</span>
+                    <select name="methodOfDonation[]" id="methodOfDonation" class="dropdown">
+                      <option value="Church Collection">Cheque</option>
+                      <option value="Direct Donation">Bank Transfer</option>
+                      <option value="Direct Donation">Cash</option>
+                    </select>
+                  </div>
+
+
+
+                  <div class="input-box">
+                    <span class="details">Donation Tier</span>
+                    <select name="donorTier[]" id="donorTier" class="dropdown">
+                      <option value="Bronze">Bronze [0-100K NGN]</option>
+                      <option value="Silver">Silver [100K-500K NGN]</option>
+                      <option value="Gold">Gold [500K-1M NGN]</option>
+                      <option value="Platinum">Platinum [1M-5M NGN]</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="gender-details">
+                  <input type="radio" name="gender" id="dot-1">
+                  <input type="radio" name="gender" id="dot-2">
+                  <input type="radio" name="gender" id="dot-3">
+                  <span class="gender-title">Gender</span>
+                  <div class="category">
+
+                    <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="gender">Male</span>
+                  </label>
+
+                  <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="gender">Female</span>
+                  </label>
+
+                  <label for="dot-3">
+                    <span class="dot three"></span>
+                    <span class="gender">Prefer not to say</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="button">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </div>
+    </section>
+
+    <script src="/static/Homepage.js"></script>
+
+</body>
+</html>
