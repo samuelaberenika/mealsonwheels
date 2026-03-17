@@ -1,14 +1,14 @@
-# 🍽️ MealsOnWheels — Beneficiary Registration System
+# 🍽️ MealsOnWheels - Beneficiary Registration System
 
-> A full-stack web registration platform built for the **Saint Vincent de Paul Society (SSVP)** in Lagos, Nigeria — designed to manage beneficiary sign-ups, meal allocation, partner onboarding, and approval workflows from end to end.
+> A full-stack web registration platform built for the **Saint Vincent de Paul Society (SSVP)** in Lagos, Nigeria - designed to manage beneficiary sign-ups, meal allocation, partner onboarding, and approval workflows from end to end.
 
 ---
 
 ## 📌 Overview
 
-Nigeria's economic challenges have left millions unable to access adequate nutrition. In Lagos State alone — with a population exceeding 25 million — an estimated 1 in 5 residents lack daily access to a nutritious meal. The MealsOnWheels programme directly addresses this by connecting vulnerable individuals (orphans, the elderly, the sick, the unemployed) with cooked meals and raw food ingredients through a structured, volunteer-led process.
+Nigeria's economic challenges have left millions unable to access adequate nutrition. In Lagos State alone - with a population exceeding 25 million - an estimated 1 in 5 residents lack daily access to a nutritious meal. The MealsOnWheels programme directly addresses this by connecting vulnerable individuals (orphans, the elderly, the sick, the unemployed) with cooked meals and raw food ingredients through a structured, volunteer-led process.
 
-This system was commissioned to **replace a manual, paper-based workflow** with a secure, user-friendly digital registration platform — reducing administrative overhead and ensuring only verified beneficiaries receive assistance.
+This system was commissioned to **replace a manual, paper-based workflow** with a secure, user-friendly digital registration platform - reducing administrative overhead and ensuring only verified beneficiaries receive assistance.
 
 ---
 
@@ -92,16 +92,16 @@ mealsonwheels/
 ```
 
 **Three meal categories are supported:**
-- 🍳 **Cooked Food** — for those unable to cook (once/twice daily, up to 2 months)
-- 🥦 **Raw Ingredients** — for those who can cook but lack supplies (weekly/bi-weekly)
-- 🤝 **Combined** — for special cases such as pregnancy or specific dietary needs
+- 🍳 **Cooked Food** - for those unable to cook (once/twice daily, up to 2 months)
+- 🥦 **Raw Ingredients** - for those who can cook but lack supplies (weekly/bi-weekly)
+- 🤝 **Combined** - for special cases such as pregnancy or specific dietary needs
 
 ---
 
 ## 🔒 Security & Compatibility Considerations
 
 - Form inputs validated client-side and server-side to prevent malformed data
-- SQLite database kept local — no external data transmission
+- SQLite database kept local - no external data transmission
 - Platform compatibility tested across major browsers
 - Beneficiary data handled with confidentiality in line with SSVP privacy guidelines
 
@@ -120,7 +120,7 @@ mealsonwheels/
 
 ## 📸 Screenshots
 
-> *Screenshots to be added — run locally to view the full UI.*
+> *Screenshots to be added - run locally to view the full UI.*
 
 ---
 
@@ -158,14 +158,14 @@ Full service documentation covering beneficiary eligibility criteria, meal categ
 
 ## 🤝 Client
 
-Built for the **Saint Vincent de Paul Society (SSVP)**, Lagos, Nigeria — a Catholic charitable organisation operating globally to provide direct person-to-person service to individuals in need.
+Built for the **Saint Vincent de Paul Society (SSVP)**, Lagos, Nigeria - a Catholic charitable organisation operating globally to provide direct person-to-person service to individuals in need.
 
 ---
 
 ## 👨‍💻 Developer
 
 **Samuel Aberenika**  
-Computer Science (Cybersecurity) — University of Plymouth  
+Computer Science (Cybersecurity) - University of Plymouth  
 [LinkedIn](https://linkedin.com/in/samuelaberenika) · [GitHub](https://github.com/samuelaberenika) · samuel.aberenika07@gmail.com
 
 ---
