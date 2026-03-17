@@ -51,9 +51,9 @@
 
 
 <!-- ── Hero ─────────────────────────────────────────────────── -->
-<section class="hero" aria-labelledby="heroTitle">
+<section class="hero hero--into-dash" aria-labelledby="heroTitle">
   <div class="container">
-    <div class="hero-inner">
+    <div class="hero-inner hero-inner--wide">
 
       <div class="hero-content anim-fiu">
         <p class="hero-eyebrow">
@@ -68,6 +68,7 @@
         <p class="hero-desc">
           A secure platform for SSVP members to register beneficiaries, coordinate
           meal delivery, and manage food assistance — from registration to confirmation.
+          Fighting food insecurity in Lagos, one meal at a time.
         </p>
 
         <!-- Guest CTAs -->
@@ -90,76 +91,38 @@
         </div>
       </div>
 
-      <!-- Visual card -->
-      <div class="hero-visual anim-fiu anim-fiu-d2" aria-hidden="true">
-        <div class="hero-card">
-          <p class="hero-card__label">How it works</p>
-          <div class="hero-card__steps">
-            <div class="hero-step">
-              <span class="hero-step__n">1</span>
-              <span class="hero-step__text"><strong>Register</strong> — SSVP member submits beneficiary details</span>
-            </div>
-            <div class="hero-step">
-              <span class="hero-step__n">2</span>
-              <span class="hero-step__text"><strong>Review</strong> — Society committee assesses eligibility</span>
-            </div>
-            <div class="hero-step">
-              <span class="hero-step__n">3</span>
-              <span class="hero-step__text"><strong>Approve</strong> — President confirms and sets meal type</span>
-            </div>
-            <div class="hero-step">
-              <span class="hero-step__n">4</span>
-              <span class="hero-step__text"><strong>Deliver</strong> — Logistics partner begins service</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 
-<!-- ── Mission ───────────────────────────────────────────────── -->
-<section class="mission-section" aria-labelledby="missionTitle">
+<!-- ── Impact stat cards ──────────────────────────────────────── -->
+<section class="dash-stats" aria-label="Programme at a glance">
   <div class="container">
-    <div class="mission-inner">
+    <div class="dash-stats__grid">
 
-      <div class="mission-text anim-fiu">
-        <p class="section-eyebrow">Our mission</p>
-        <h2 class="section-title" id="missionTitle">Fighting hunger in Lagos,<br />one meal at a time</h2>
-        <p class="mission-desc">
-          Lagos State, home to over 25 million residents, faces a food security crisis.
-          An estimated <strong>2 in every 10 people</strong> lack access to a nutritious
-          meal each day — a burden deepened by widespread poverty and the lasting impact
-          of the COVID-19 pandemic.
-        </p>
-        <p class="mission-desc">
-          The <strong>Meals on Wheels programme</strong>, run by the Saint Vincent de Paul
-          Society (SSVP), mobilises resources to provide daily meals to orphans, the sick
-          and elderly, persons with disabilities, and the unemployed — ensuring no one
-          goes to bed hungry.
-        </p>
-        <a href="#who-we-help" class="btn btn-outline">Who we help</a>
+      <div class="dash-stat dash-stat--green">
+        <span class="dash-stat__n">25M+</span>
+        <span class="dash-stat__l">Lagos residents</span>
+        <span class="dash-stat__sub">City we serve</span>
       </div>
 
-      <div class="mission-highlights anim-fiu anim-fiu-d2" aria-hidden="true">
-        <div class="highlight-card highlight-card--green">
-          <span class="highlight-n">25M+</span>
-          <span class="highlight-l">Lagos residents</span>
-        </div>
-        <div class="highlight-card highlight-card--amber">
-          <span class="highlight-n">2 in 10</span>
-          <span class="highlight-l">Without daily nutrition</span>
-        </div>
-        <div class="highlight-card highlight-card--green">
-          <span class="highlight-n">4</span>
-          <span class="highlight-l">Beneficiary categories served</span>
-        </div>
-        <div class="highlight-card highlight-card--amber">
-          <span class="highlight-n">3</span>
-          <span class="highlight-l">Types of meal assistance</span>
-        </div>
+      <div class="dash-stat dash-stat--amber">
+        <span class="dash-stat__n">2 in 10</span>
+        <span class="dash-stat__l">Food insecure daily</span>
+        <span class="dash-stat__sub">Cannot access nutritious meals</span>
+      </div>
+
+      <div class="dash-stat dash-stat--green">
+        <span class="dash-stat__n" id="statTotal">—</span>
+        <span class="dash-stat__l">Beneficiaries registered</span>
+        <span class="dash-stat__sub">In our programme</span>
+      </div>
+
+      <div class="dash-stat dash-stat--amber">
+        <span class="dash-stat__n" id="statApproved">—</span>
+        <span class="dash-stat__l">Currently receiving meals</span>
+        <span class="dash-stat__sub">Active approvals</span>
       </div>
 
     </div>
@@ -167,236 +130,216 @@
 </section>
 
 
-<!-- ── Live stats strip ──────────────────────────────────────── -->
-<section class="stats-strip" aria-label="Programme statistics">
-  <div class="container">
-    <div class="stats-strip__inner">
-      <div class="strip-stat">
-        <span class="strip-stat__n" id="statTotal">0</span>
-        <span class="strip-stat__l">Total registered</span>
-      </div>
-      <div class="strip-stat">
-        <span class="strip-stat__n" id="statApproved">0</span>
-        <span class="strip-stat__l">Currently approved</span>
-      </div>
-      <div class="strip-stat">
-        <span class="strip-stat__n" id="statPending">0</span>
-        <span class="strip-stat__l">Awaiting review</span>
-      </div>
-      <div class="strip-stat">
-        <span class="strip-stat__n" id="statPartners">0</span>
-        <span class="strip-stat__l">Active partners</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ── How it works ──────────────────────────────────────────── -->
-<section class="how-section" id="how-it-works" aria-labelledby="howTitle">
-  <div class="container">
-    <div class="section-header">
-      <p class="section-eyebrow">The process</p>
-      <h2 class="section-title" id="howTitle">From registration to first meal</h2>
-      <p class="section-desc">
-        Every beneficiary goes through a structured three-stage process to ensure
-        assistance reaches those who need it most.
-      </p>
-    </div>
-
-    <div class="steps-grid">
-
-      <article class="step-card anim-fiu">
-        <div class="step-card__icon step-card__icon--green">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
-            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-            <path d="M12 11h4"/><path d="M12 16h4"/>
-            <path d="M8 11h.01"/><path d="M8 16h.01"/>
-          </svg>
-        </div>
-        <p class="step-card__num">Step 01</p>
-        <h3 class="step-card__title">Registration</h3>
-        <p class="step-card__desc">
-          An authorised SSVP member fills in the beneficiary registration form online
-          or in person, capturing personal details, eligibility criteria, and preferred
-          meal type.
-        </p>
-      </article>
-
-      <article class="step-card anim-fiu anim-fiu-d1">
-        <div class="step-card__icon step-card__icon--amber">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"/>
-            <path d="m21 21-4.3-4.3"/>
-          </svg>
-        </div>
-        <p class="step-card__num">Step 02</p>
-        <h3 class="step-card__title">Review &amp; Approval</h3>
-        <p class="step-card__desc">
-          Society members review the submission in a scheduled meeting. The President
-          and Secretary verify eligibility, confirm meal category, and set the duration
-          of assistance.
-        </p>
-      </article>
-
-      <article class="step-card anim-fiu anim-fiu-d2">
-        <div class="step-card__icon step-card__icon--teal">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/>
-            <rect width="7" height="7" x="14" y="10" rx="1"/>
-            <circle cx="7.5" cy="17.5" r="2.5"/>
-            <circle cx="17.5" cy="17.5" r="2.5"/>
-          </svg>
-        </div>
-        <p class="step-card__num">Step 03</p>
-        <h3 class="step-card__title">Confirmation &amp; Delivery</h3>
-        <p class="step-card__desc">
-          Once approved, the beneficiary is notified with their start date, meal
-          schedule, and assigned logistics partner. Deliveries begin as confirmed.
-        </p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ── Meal categories ────────────────────────────────────────── -->
-<section class="categories-section" aria-labelledby="catTitle">
+<!-- ── Meal categories (tabbed) ──────────────────────────────── -->
+<section class="categories-section" aria-labelledby="mealTabsTitle">
   <div class="container">
     <div class="section-header">
       <p class="section-eyebrow">What we provide</p>
-      <h2 class="section-title" id="catTitle">Three categories of support</h2>
+      <h2 class="section-title" id="mealTabsTitle">Three categories of support</h2>
       <p class="section-desc">
         Each beneficiary receives assistance tailored to their specific circumstances.
       </p>
     </div>
 
-    <div class="categories-grid">
+    <div class="meal-tab-bar" role="tablist" aria-label="Meal categories">
+      <button class="meal-tab-btn active" role="tab" aria-selected="true"
+        aria-controls="panel-cooked" data-tab="cooked">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+        </svg>
+        Cooked Food
+      </button>
+      <button class="meal-tab-btn" role="tab" aria-selected="false"
+        aria-controls="panel-raw" data-tab="raw">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+        Raw Ingredients
+      </button>
+      <button class="meal-tab-btn" role="tab" aria-selected="false"
+        aria-controls="panel-combo" data-tab="combo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+        </svg>
+        Combination
+      </button>
+    </div>
 
-      <article class="cat-card">
-        <div class="cat-card__icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--amber-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <div class="meal-tab-panels">
+
+      <div class="meal-tab-panel" id="panel-cooked" role="tabpanel">
+        <div class="meal-tab-panel__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--amber-400)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
           </svg>
         </div>
-        <h3 class="cat-card__title">Cooked Food</h3>
-        <p class="cat-card__desc">
-          Prepared meals delivered to beneficiaries who are unable to cook — due to physical
-          limitations, lack of facilities, or illness.
-        </p>
-        <p class="cat-card__meta">Once or twice daily · Up to 2 months per cycle</p>
-      </article>
+        <div class="meal-tab-panel__body">
+          <h3 class="meal-tab-panel__title">Cooked Food</h3>
+          <p class="meal-tab-panel__desc">
+            Prepared meals delivered to beneficiaries who are unable to cook — due to physical
+            limitations, lack of cooking facilities, or illness. Meals are sourced from vetted
+            food vendors with high hygiene standards.
+          </p>
+          <span class="meal-tab-panel__meta">Once or twice daily · Up to 2 months per cycle</span>
+        </div>
+      </div>
 
-      <article class="cat-card">
-        <div class="cat-card__icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--amber-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="meal-tab-panel" id="panel-raw" role="tabpanel" hidden>
+        <div class="meal-tab-panel__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--amber-400)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
             <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
           </svg>
         </div>
-        <h3 class="cat-card__title">Raw Ingredients</h3>
-        <p class="cat-card__desc">
-          Food supplies for beneficiaries who can cook but lack access to ingredients.
-          Provided weekly or bi-weekly to supplement their existing food supply.
-        </p>
-        <p class="cat-card__meta">Weekly or bi-weekly · Up to 2 months per cycle</p>
-      </article>
+        <div class="meal-tab-panel__body">
+          <h3 class="meal-tab-panel__title">Raw Ingredients</h3>
+          <p class="meal-tab-panel__desc">
+            Food supplies for beneficiaries who can cook but lack access to ingredients.
+            Provided weekly or bi-weekly through partnered grocery stores to supplement
+            their existing food supply with fresh, quality staples.
+          </p>
+          <span class="meal-tab-panel__meta">Weekly or bi-weekly · Up to 2 months per cycle</span>
+        </div>
+      </div>
 
-      <article class="cat-card">
-        <div class="cat-card__icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--amber-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="meal-tab-panel" id="panel-combo" role="tabpanel" hidden>
+        <div class="meal-tab-panel__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--amber-400)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
           </svg>
         </div>
-        <h3 class="cat-card__title">Combination</h3>
-        <p class="cat-card__desc">
-          Both cooked meals and raw ingredients, reserved for special cases such as
-          pregnancy, large families, or specific dietary requirements.
-        </p>
-        <p class="cat-card__meta">Custom schedule · Approved case-by-case</p>
-      </article>
+        <div class="meal-tab-panel__body">
+          <h3 class="meal-tab-panel__title">Combination</h3>
+          <p class="meal-tab-panel__desc">
+            Both cooked meals and raw ingredients, reserved for special cases such as
+            pregnancy, large families, or specific dietary requirements. Approved individually
+            by the Society committee on a case-by-case basis.
+          </p>
+          <span class="meal-tab-panel__meta">Custom schedule · Approved case-by-case</span>
+        </div>
+      </div>
 
     </div>
   </div>
 </section>
 
 
-<!-- ── Who we help ────────────────────────────────────────────── -->
-<section class="eligibility-section" id="who-we-help" aria-labelledby="eligTitle">
+<!-- ── Process + Eligibility (2-col) ─────────────────────────── -->
+<section class="process-section" id="how-it-works" aria-label="Process and eligibility">
   <div class="container">
-    <div class="section-header">
-      <p class="section-eyebrow">Beneficiary eligibility</p>
-      <h2 class="section-title" id="eligTitle">Who we help</h2>
-      <p class="section-desc">
-        Only SSVP members may register beneficiaries. Applicants must meet one or more
-        of the following criteria.
-      </p>
-    </div>
+    <div class="process-inner">
 
-    <div class="eligibility-grid">
+      <!-- Left: How it works -->
+      <div class="process-col">
+        <p class="section-eyebrow">The process</p>
+        <h2 class="process-col__title">From registration<br />to first meal</h2>
+        <ol class="process-steps" aria-label="Registration steps">
 
-      <article class="elig-card">
-        <div class="elig-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-          </svg>
-        </div>
-        <h3 class="elig-card__title">Job loss or no income</h3>
-        <p class="elig-card__desc">
-          Individuals who have recently lost their job or have no sustainable means of
-          income and cannot provide food for themselves or their families.
-        </p>
-      </article>
+          <li class="process-step">
+            <span class="process-step__n" aria-hidden="true">01</span>
+            <div class="process-step__body">
+              <strong class="process-step__title">Registration</strong>
+              <p class="process-step__desc">An authorised SSVP member fills in the beneficiary
+              registration form, capturing personal details, eligibility criteria, and preferred
+              meal type.</p>
+            </div>
+          </li>
 
-      <article class="elig-card">
-        <div class="elig-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </div>
-        <h3 class="elig-card__title">No support system</h3>
-        <p class="elig-card__desc">
-          People who lack a support network — including orphans and children from families
-          with no means of providing a minimum food ration.
-        </p>
-      </article>
+          <li class="process-step">
+            <span class="process-step__n" aria-hidden="true">02</span>
+            <div class="process-step__body">
+              <strong class="process-step__title">Review &amp; Approval</strong>
+              <p class="process-step__desc">Society members review the submission in a scheduled
+              meeting. The President and Secretary verify eligibility, confirm meal category,
+              and set the duration of assistance.</p>
+            </div>
+          </li>
 
-      <article class="elig-card">
-        <div class="elig-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            <polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
-        </div>
-        <h3 class="elig-card__title">Homeless, sick, or elderly</h3>
-        <p class="elig-card__desc">
-          Homeless individuals with no food access, and sick or elderly persons with
-          no or limited support from family members.
-        </p>
-      </article>
+          <li class="process-step">
+            <span class="process-step__n" aria-hidden="true">03</span>
+            <div class="process-step__body">
+              <strong class="process-step__title">Confirmation &amp; Delivery</strong>
+              <p class="process-step__desc">Once approved, the beneficiary is notified with their
+              start date, meal schedule, and assigned logistics partner. Deliveries begin
+              as confirmed.</p>
+            </div>
+          </li>
 
-      <article class="elig-card">
-        <div class="elig-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-            <line x1="6" x2="6" y1="1" y2="4"/>
-            <line x1="10" x2="10" y1="1" y2="4"/>
-            <line x1="14" x2="14" y1="1" y2="4"/>
-          </svg>
-        </div>
-        <h3 class="elig-card__title">Unable to self-feed</h3>
-        <p class="elig-card__desc">
-          Anyone who is unable to feed themselves and requires daily assistance with food
-          due to physical disability or other severe circumstances.
-        </p>
-      </article>
+        </ol>
+      </div>
+
+      <!-- Right: Who we help -->
+      <div class="process-col">
+        <p class="section-eyebrow">Beneficiary eligibility</p>
+        <h2 class="process-col__title">Who we help</h2>
+        <p class="process-col__intro">Only SSVP members may register beneficiaries. Applicants
+        must meet one or more of the following criteria.</p>
+        <ul class="elig-list" aria-label="Eligibility criteria">
+
+          <li class="elig-item">
+            <span class="elig-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </span>
+            <div class="elig-item__body">
+              <strong>Job loss or no income</strong>
+              <p>Individuals who have recently lost their job or have no sustainable means of
+              income and cannot provide food for themselves or their families.</p>
+            </div>
+          </li>
+
+          <li class="elig-item">
+            <span class="elig-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </span>
+            <div class="elig-item__body">
+              <strong>No support system</strong>
+              <p>People who lack a support network — including orphans and children from families
+              with no means of providing a minimum food ration.</p>
+            </div>
+          </li>
+
+          <li class="elig-item">
+            <span class="elig-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </span>
+            <div class="elig-item__body">
+              <strong>Homeless, sick, or elderly</strong>
+              <p>Homeless individuals with no food access, and sick or elderly persons with
+              no or limited support from family members.</p>
+            </div>
+          </li>
+
+          <li class="elig-item">
+            <span class="elig-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                <line x1="6" x2="6" y1="1" y2="4"/>
+                <line x1="10" x2="10" y1="1" y2="4"/>
+                <line x1="14" x2="14" y1="1" y2="4"/>
+              </svg>
+            </span>
+            <div class="elig-item__body">
+              <strong>Unable to self-feed</strong>
+              <p>Anyone who is unable to feed themselves and requires daily assistance with
+              food due to physical disability or other severe circumstances.</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
 
     </div>
   </div>
@@ -478,18 +421,37 @@
 </section>
 
 
-<!-- ── CTA banner ─────────────────────────────────────────────── -->
-<section class="cta-section" aria-labelledby="ctaTitle">
+<!-- ── CTA split ──────────────────────────────────────────────── -->
+<section class="cta-split" aria-label="Call to action">
   <div class="container">
-    <div class="cta-inner">
-      <div class="cta-text">
-        <h2 class="cta-title" id="ctaTitle">Ready to register a beneficiary?</h2>
-        <p class="cta-desc">Sign in as an SSVP member to start the process.</p>
+    <div class="cta-split__inner">
+
+      <div class="cta-split__card cta-split__card--dark">
+        <div class="cta-split__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--amber-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+            <path d="M7 2v20"/>
+            <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+          </svg>
+        </div>
+        <h2 class="cta-split__title">Register a beneficiary</h2>
+        <p class="cta-split__desc">SSVP members can enroll eligible individuals into the
+        Meals on Wheels programme. Sign in to begin the multi-step registration process.</p>
+        <a href="login.html" class="btn btn-accent btn-lg">Sign in to register</a>
       </div>
-      <div class="cta-actions">
-        <a href="login.html" class="btn btn-primary btn-xl">Sign in</a>
-        <a href="#how-it-works" class="btn btn-ghost btn-xl">Learn more</a>
+
+      <div class="cta-split__card cta-split__card--light">
+        <div class="cta-split__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </div>
+        <h2 class="cta-split__title">Support the programme</h2>
+        <p class="cta-split__desc">Your contribution helps feed vulnerable families in Lagos
+        every single day. Donations fund food, logistics, and operations.</p>
+        <a href="#" class="btn btn-primary btn-lg">Make a donation</a>
       </div>
+
     </div>
   </div>
 </section>
@@ -533,6 +495,23 @@
       userPill.classList.remove('hidden');
       logoutBtn.classList.remove('hidden');
     }
+  });
+
+  // Meal type tab switching
+  document.querySelectorAll('.meal-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      document.querySelectorAll('.meal-tab-btn').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.meal-tab-panel').forEach(p => {
+        p.hidden = true;
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById('panel-' + target).hidden = false;
+    });
   });
 </script>
 </body>
