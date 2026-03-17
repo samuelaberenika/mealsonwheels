@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — MealsOnWheels</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-page">
+
+<!-- ── Nav ─────────────────────────────────────────────────── -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-mark">🍽️</span>
+      MealsOnWheels
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"               class="nav-link">Home</a></li>
+        <li><a href="register-beneficiary.html" class="nav-link">Register</a></li>
+        <li><a href="admin-dashboard.html"      class="nav-link active">Dashboard</a></li>
+        <li><a href="partner-portal.html"       class="nav-link">Partners</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <div class="nav-user-pill" id="navUserPill">
+        <div class="nav-user-avatar" id="navUserInitials">?</div>
+        <span id="navUserName">User</span>
+        <span class="nav-role-tag" id="navUserRole"></span>
+      </div>
+      <button class="btn btn-ghost btn-sm" data-action="logout">Sign out</button>
+    </div>
+  </div>
+</header>
+
+<!-- ── Page header ─────────────────────────────────────────── -->
+<div class="page-header">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+      <div class="page-header__inner">
+        <span class="page-header__eyebrow">Admin Panel</span>
+        <h1 class="page-header__title">Review Dashboard</h1>
+        <p class="page-header__subtitle">Manage beneficiary applications and partner registrations.</p>
+      </div>
+      <a href="register-beneficiary.html" class="btn btn-primary">
+        + Register Beneficiary
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Dashboard body ──────────────────────────────────────── -->
+<main class="dashboard-body">
+  <div class="container">
+
+    <!-- Stats row -->
+    <div class="stats-row" id="statsRow">
+      <div class="stat-card stat-card--amber">
+        <div class="stat-card__icon">⏳</div>
+        <div class="stat-card__body">
+          <span class="stat-card__number" id="statPending">0</span>
+          <span class="stat-card__label">Pending review</span>
+        </div>
+      </div>
+      <div class="stat-card stat-card--green">
+        <div class="stat-card__icon">✅</div>
+        <div class="stat-card__body">
+          <span class="stat-card__number" id="statApproved">0</span>
+          <span class="stat-card__label">Approved</span>
+        </div>
+      </div>
+      <div class="stat-card stat-card--red">
+        <div class="stat-card__icon">❌</div>
+        <div class="stat-card__body">
+          <span class="stat-card__number" id="statRejected">0</span>
+          <span class="stat-card__label">Rejected</span>
+        </div>
+      </div>
+      <div class="stat-card stat-card--teal">
+        <div class="stat-card__icon">🤝</div>
+        <div class="stat-card__body">
+          <span class="stat-card__number" id="statPartners">0</span>
+          <span class="stat-card__label">Partner applications</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global alert -->
+    <div id="globalAlert" role="alert" aria-live="polite" style="margin-bottom:1rem"></div>
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="panel-pending"  id="tab-pending"  onclick="switchTab('pending')">
+        ⏳ Pending <span class="tab-count" id="cntPending">0</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-approved" id="tab-approved" onclick="switchTab('approved')">
+        ✅ Approved <span class="tab-count" id="cntApproved">0</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-rejected" id="tab-rejected" onclick="switchTab('rejected')">
+        ❌ Rejected <span class="tab-count" id="cntRejected">0</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-all"      id="tab-all"      onclick="switchTab('all')">
+        📋 All Beneficiaries <span class="tab-count" id="cntAll">0</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-partners" id="tab-partners" onclick="switchTab('partners')">
+        🤝 Partners <span class="tab-count" id="cntPartners">0</span>
+      </button>
+    </div>
+
+    <!-- ── Pending tab ──────────────────────────────────── -->
+    <div class="tab-panel active" id="panel-pending" role="tabpanel" aria-labelledby="tab-pending">
+      <div class="toolbar">
+        <div class="toolbar-search">
+          <svg class="toolbar-search__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="toolbar-search__input" type="search" placeholder="Search by name or address…"
+            oninput="filterTable('pending', this.value)" aria-label="Search pending beneficiaries" />
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="table" id="table-pending" aria-label="Pending beneficiaries">
+          <thead>
+            <tr>
+              <th>Beneficiary</th>
+              <th>Category</th>
+              <th>Meal plan</th>
+              <th>Submitted</th>
+              <th>Registered by</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-pending"></tbody>
+        </table>
+      </div>
+      <div id="empty-pending" class="empty-state hidden">
+        <div class="empty-state__icon">🎉</div>
+        <p class="empty-state__title">No pending applications</p>
+        <p class="empty-state__desc">All submissions have been reviewed. New registrations will appear here.</p>
+      </div>
+    </div>
+
+    <!-- ── Approved tab ─────────────────────────────────── -->
+    <div class="tab-panel" id="panel-approved" role="tabpanel" aria-labelledby="tab-approved">
+      <div class="toolbar">
+        <div class="toolbar-search">
+          <svg class="toolbar-search__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="toolbar-search__input" type="search" placeholder="Search…"
+            oninput="filterTable('approved', this.value)" aria-label="Search approved beneficiaries" />
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="table" id="table-approved">
+          <thead>
+            <tr>
+              <th>Beneficiary</th>
+              <th>Category</th>
+              <th>Meal plan</th>
+              <th>Approved</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-approved"></tbody>
+        </table>
+      </div>
+      <div id="empty-approved" class="empty-state hidden">
+        <div class="empty-state__icon">📋</div>
+        <p class="empty-state__title">No approved beneficiaries yet</p>
+        <p class="empty-state__desc">Approved applications will appear here.</p>
+      </div>
+    </div>
+
+    <!-- ── Rejected tab ─────────────────────────────────── -->
+    <div class="tab-panel" id="panel-rejected" role="tabpanel" aria-labelledby="tab-rejected">
+      <div class="table-wrap">
+        <table class="table" id="table-rejected">
+          <thead>
+            <tr>
+              <th>Beneficiary</th>
+              <th>Category</th>
+              <th>Rejected</th>
+              <th>Reason</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-rejected"></tbody>
+        </table>
+      </div>
+      <div id="empty-rejected" class="empty-state hidden">
+        <div class="empty-state__icon">✅</div>
+        <p class="empty-state__title">No rejected applications</p>
+        <p class="empty-state__desc">Rejected submissions will appear here.</p>
+      </div>
+    </div>
+
+    <!-- ── All beneficiaries ────────────────────────────── -->
+    <div class="tab-panel" id="panel-all" role="tabpanel" aria-labelledby="tab-all">
+      <div class="toolbar">
+        <div class="toolbar-search">
+          <svg class="toolbar-search__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="toolbar-search__input" type="search" placeholder="Search all beneficiaries…"
+            oninput="filterTable('all', this.value)" aria-label="Search all beneficiaries" />
+        </div>
+        <select class="toolbar-filter" onchange="filterByStatus(this.value)" aria-label="Filter by status">
+          <option value="">All statuses</option>
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table class="table" id="table-all">
+          <thead>
+            <tr>
+              <th>Beneficiary</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Meal plan</th>
+              <th>Submitted</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-all"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Partners tab ─────────────────────────────────── -->
+    <div class="tab-panel" id="panel-partners" role="tabpanel" aria-labelledby="tab-partners">
+      <div class="table-wrap">
+        <table class="table" id="table-partners">
+          <thead>
+            <tr>
+              <th>Partner</th>
+              <th>Type</th>
+              <th>Contact</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-partners"></tbody>
+        </table>
+      </div>
+      <div id="empty-partners" class="empty-state hidden">
+        <div class="empty-state__icon">🤝</div>
+        <p class="empty-state__title">No partners registered</p>
+        <p class="empty-state__desc">Partner applications will appear here.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ── Review Modal ─────────────────────────────────────────── -->
+<div class="modal-overlay hidden" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal__header">
+      <h2 class="modal__title" id="modalTitle">Beneficiary Details</h2>
+      <button class="modal__close" onclick="closeModal()" aria-label="Close">✕</button>
+    </div>
+    <div class="modal__body" id="modalBody"></div>
+    <div class="modal__footer" id="modalFooter"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">🍽️ MealsOnWheels</div>
+    <p class="footer-note">Saint Vincent de Paul Society · Lagos, Nigeria</p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

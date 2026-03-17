@@ -1,0 +1,268 @@
+/* ── Register layout ──────────────────────────────────────── */
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream-100);
+}
+.register-body {
+  flex: 1;
+  padding: 3rem 0 5rem;
+}
+.register-inner {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ── Multi-step progress bar ──────────────────────────────── */
+.progress-bar {
+  background: var(--white);
+  border: 1px solid var(--ink-300);
+  border-radius: var(--r-md);
+  padding: 1.5rem;
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.75rem;
+  overflow: hidden;
+}
+.progress-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+  text-align: center;
+}
+/* connector line */
+.progress-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 16px; left: calc(50% + 16px);
+  right: calc(-50% + 16px);
+  height: 2px;
+  background: var(--ink-300);
+  transition: background 0.3s;
+  z-index: 0;
+}
+.progress-step.done:not(:last-child)::after { background: var(--green-700); }
+
+.progress-step__dot {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--ink-300);
+  background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700;
+  color: var(--ink-500);
+  position: relative; z-index: 1;
+  transition: all 0.3s;
+}
+.progress-step.active .progress-step__dot {
+  border-color: var(--green-800);
+  background: var(--green-800);
+  color: white;
+}
+.progress-step.done .progress-step__dot {
+  border-color: var(--green-700);
+  background: var(--green-700);
+  color: white;
+}
+.progress-step.done .progress-step__dot::after {
+  content: '✓';
+  font-size: 0.85rem;
+}
+.progress-step__label {
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--ink-500);
+  transition: color 0.3s;
+}
+.progress-step.active .progress-step__label { color: var(--green-800); }
+.progress-step.done   .progress-step__label { color: var(--green-700); }
+
+/* ── Form card ────────────────────────────────────────────── */
+.form-card {
+  background: var(--white);
+  border: 1px solid var(--ink-300);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.form-card__header {
+  padding: 1.75rem 2rem;
+  border-bottom: 1px solid var(--ink-100);
+  display: flex; align-items: flex-start;
+  gap: 1rem;
+}
+.form-card__icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem;
+  background: var(--green-50);
+}
+.form-card__meta { display: flex; flex-direction: column; gap: 2px; }
+.form-card__title { font-size: 1.15rem; font-weight: 600; }
+.form-card__sub   { font-size: 0.85rem; color: var(--ink-500); }
+.form-card__body  { padding: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.form-card__footer {
+  padding: 1.25rem 2rem;
+  border-top: 1px solid var(--ink-100);
+  display: flex; justify-content: space-between;
+  align-items: center; gap: 1rem;
+  background: var(--ink-100);
+}
+
+/* ── Step panels ──────────────────────────────────────────── */
+.step-panel { display: none; }
+.step-panel.active { display: contents; }
+
+/* ── Fieldset / Section divider ───────────────────────────── */
+.form-section-label {
+  font-size: 0.78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--green-700);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--green-100);
+  margin-top: 0.5rem;
+}
+
+/* ── Radio group ──────────────────────────────────────────── */
+.radio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+.radio-card {
+  position: relative;
+}
+.radio-card input[type="radio"] {
+  position: absolute;
+  opacity: 0; width: 0; height: 0;
+}
+.radio-card__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1.5px solid var(--ink-300);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all var(--ease);
+}
+.radio-card__label:hover { border-color: var(--green-700); }
+.radio-card input:checked + .radio-card__label {
+  border-color: var(--green-800);
+  background: var(--green-50);
+}
+.radio-card__icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+.radio-card__text { display: flex; flex-direction: column; gap: 2px; }
+.radio-card__name { font-size: 0.9rem; font-weight: 600; color: var(--ink-900); }
+.radio-card__desc { font-size: 0.8rem; color: var(--ink-500); line-height: 1.5; }
+
+/* ── Checkbox ─────────────────────────────────────────────── */
+.checkbox-group {
+  display: flex; flex-direction: column; gap: 0.65rem;
+}
+.checkbox-item {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  cursor: pointer;
+}
+.checkbox-item input[type="checkbox"] {
+  width: 18px; height: 18px;
+  margin-top: 2px; flex-shrink: 0;
+  accent-color: var(--green-800);
+  cursor: pointer;
+}
+.checkbox-item__text { font-size: 0.9rem; color: var(--ink-700); line-height: 1.5; }
+
+/* ── Review panel ─────────────────────────────────────────── */
+.review-section { display: flex; flex-direction: column; gap: 0.5rem; }
+.review-section__title {
+  font-size: 0.78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .07em;
+  color: var(--ink-500);
+  margin-bottom: 0.25rem;
+}
+.review-rows { display: flex; flex-direction: column; gap: 0; }
+.review-row {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--ink-100);
+  font-size: 0.875rem;
+}
+.review-row:last-child { border-bottom: none; }
+.review-key { color: var(--ink-500); flex-shrink: 0; }
+.review-val { color: var(--ink-900); font-weight: 500; text-align: right; }
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+.sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.sidebar-card {
+  background: var(--white);
+  border: 1px solid var(--ink-300);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.sidebar-card__header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--ink-100);
+  font-size: 0.85rem; font-weight: 700;
+  color: var(--ink-700);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.sidebar-card__body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+.eligibility-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.eligibility-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.85rem; color: var(--ink-600); line-height: 1.5; }
+.eligibility-item::before { content: '✓'; color: var(--green-700); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+.info-row { display: flex; flex-direction: column; gap: 2px; }
+.info-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-500); }
+.info-val   { font-size: 0.875rem; color: var(--ink-800); }
+
+/* ── Success state ────────────────────────────────────────── */
+.success-screen {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+.success-screen.active { display: flex; }
+.success-icon {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--green-50);
+  border: 3px solid var(--green-700);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.2rem;
+  animation: var(--ease-spring) popIn both;
+}
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.success-title { font-size: 1.5rem; font-weight: 600; }
+.success-desc  { font-size: 0.95rem; color: var(--ink-500); max-width: 380px; line-height: 1.7; }
+.success-ref {
+  font-size: 0.8rem; color: var(--ink-500);
+  background: var(--ink-100); border-radius: var(--r-sm);
+  padding: 0.4rem 0.9rem;
+}
+.success-ref code { font-family: monospace; color: var(--green-800); font-weight: 700; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .register-inner { grid-template-columns: 1fr; }
+  .sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .sidebar { grid-template-columns: 1fr; }
+  .form-card__body { padding: 1.25rem; }
+  .form-card__footer { flex-direction: column; }
+  .radio-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MealsOnWheels — Beneficiary Registration System</title>
+  <meta name="description" content="The MealsOnWheels beneficiary registration platform by the Saint Vincent de Paul Society, Lagos." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────────────────── -->
+<header class="nav" role="banner">
+  <div class="nav-inner">
+
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-mark">🍽️</span>
+      MealsOnWheels
+    </a>
+
+    <nav aria-label="Main navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"               class="nav-link active">Home</a></li>
+        <li data-role="sponsor"><a href="register-beneficiary.html" class="nav-link">Register Beneficiary</a></li>
+        <li data-role="admin">  <a href="admin-dashboard.html"      class="nav-link">Dashboard</a></li>
+        <li data-role="sponsor"><a href="partner-portal.html"       class="nav-link">Partners</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <!-- Guest state -->
+      <a href="login.html" class="btn btn-primary btn-sm" id="navLoginBtn">Sign in</a>
+
+      <!-- Logged-in state (hidden until JS runs) -->
+      <div class="nav-user-pill hidden" id="navUserPill">
+        <div class="nav-user-avatar" id="navUserInitials">?</div>
+        <span id="navUserName">User</span>
+        <span class="nav-role-tag" id="navUserRole"></span>
+      </div>
+      <button class="btn btn-ghost btn-sm hidden" id="navLogoutBtn" data-action="logout">
+        Sign out
+      </button>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- ── Hero ─────────────────────────────────────────────────── -->
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-content anim-fiu">
+        <p class="hero-eyebrow">
+          <span>●</span> Saint Vincent de Paul Society
+        </p>
+        <p class="hero-greeting hidden" id="heroGreeting" style="
+          font-size:.95rem; color:rgba(255,255,255,.65);
+          margin-bottom:.5rem; font-weight:500;
+        "></p>
+        <h1 class="hero-title" id="heroTitle">
+          Delivering <em>dignity</em><br />
+          through daily meals
+        </h1>
+        <p class="hero-desc">
+          A secure platform for SSVP members to register beneficiaries, coordinate
+          meal delivery, and manage food assistance — from registration to confirmation.
+        </p>
+
+        <!-- Guest CTAs -->
+        <div class="hero-cta-guest">
+          <a href="login.html" class="btn btn-accent btn-xl">Sign in to get started</a>
+          <a href="#how-it-works" class="btn btn-outline btn-xl" style="color:white; border-color:rgba(255,255,255,.4);">
+            How it works
+          </a>
+        </div>
+
+        <!-- Logged-in CTAs -->
+        <div class="hero-cta-auth">
+          <a href="register-beneficiary.html" class="btn btn-accent btn-xl" data-role="sponsor">
+            Register beneficiary
+          </a>
+          <a href="admin-dashboard.html" class="btn btn-outline btn-xl"
+            style="color:white; border-color:rgba(255,255,255,.4);" data-role="admin">
+            Go to dashboard
+          </a>
+        </div>
+      </div>
+
+      <!-- Visual card -->
+      <div class="hero-visual anim-fiu anim-fiu-d2" aria-hidden="true">
+        <div class="hero-card">
+          <p class="hero-card__label">How it works</p>
+          <div class="hero-card__steps">
+            <div class="hero-step">
+              <span class="hero-step__n">1</span>
+              <span class="hero-step__text"><strong>Register</strong> — SSVP member submits beneficiary details</span>
+            </div>
+            <div class="hero-step">
+              <span class="hero-step__n">2</span>
+              <span class="hero-step__text"><strong>Review</strong> — Society committee assesses eligibility</span>
+            </div>
+            <div class="hero-step">
+              <span class="hero-step__n">3</span>
+              <span class="hero-step__text"><strong>Approve</strong> — President confirms and sets meal type</span>
+            </div>
+            <div class="hero-step">
+              <span class="hero-step__n">4</span>
+              <span class="hero-step__text"><strong>Deliver</strong> — Logistics partner begins service</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Live stats strip ──────────────────────────────────────── -->
+<section class="stats-strip" aria-label="Programme statistics">
+  <div class="container">
+    <div class="stats-strip__inner">
+      <div class="strip-stat">
+        <span class="strip-stat__n" id="statTotal">0</span>
+        <span class="strip-stat__l">Total registered</span>
+      </div>
+      <div class="strip-stat">
+        <span class="strip-stat__n" id="statApproved">0</span>
+        <span class="strip-stat__l">Currently approved</span>
+      </div>
+      <div class="strip-stat">
+        <span class="strip-stat__n" id="statPending">0</span>
+        <span class="strip-stat__l">Awaiting review</span>
+      </div>
+      <div class="strip-stat">
+        <span class="strip-stat__n" id="statPartners">0</span>
+        <span class="strip-stat__l">Active partners</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── How it works ──────────────────────────────────────────── -->
+<section class="how-section" id="how-it-works" aria-labelledby="howTitle">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">The process</p>
+      <h2 class="section-title" id="howTitle">From registration to first meal</h2>
+      <p class="section-desc">
+        Every beneficiary goes through a structured three-stage process to ensure
+        assistance reaches those who need it most.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <article class="step-card anim-fiu">
+        <div class="step-card__icon step-card__icon--green">📋</div>
+        <p class="step-card__num">Step 01</p>
+        <h3 class="step-card__title">Registration</h3>
+        <p class="step-card__desc">
+          An authorised SSVP member fills in the beneficiary registration form online
+          or in person, capturing personal details, eligibility criteria, and preferred
+          meal type.
+        </p>
+      </article>
+
+      <article class="step-card anim-fiu anim-fiu-d1">
+        <div class="step-card__icon step-card__icon--amber">🔍</div>
+        <p class="step-card__num">Step 02</p>
+        <h3 class="step-card__title">Review &amp; Approval</h3>
+        <p class="step-card__desc">
+          Society members review the submission in a scheduled meeting. The President
+          and Secretary verify eligibility, confirm meal category, and set the duration
+          of assistance.
+        </p>
+      </article>
+
+      <article class="step-card anim-fiu anim-fiu-d2">
+        <div class="step-card__icon step-card__icon--teal">🚴</div>
+        <p class="step-card__num">Step 03</p>
+        <h3 class="step-card__title">Confirmation &amp; Delivery</h3>
+        <p class="step-card__desc">
+          Once approved, the beneficiary is notified with their start date, meal
+          schedule, and assigned logistics partner. Deliveries begin as confirmed.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Meal categories ────────────────────────────────────────── -->
+<section class="categories-section" aria-labelledby="catTitle">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">What we provide</p>
+      <h2 class="section-title" id="catTitle">Three categories of support</h2>
+      <p class="section-desc">
+        Each beneficiary receives assistance tailored to their specific circumstances.
+      </p>
+    </div>
+
+    <div class="categories-grid">
+      <article class="cat-card">
+        <span class="cat-card__icon">🍳</span>
+        <h3 class="cat-card__title">Cooked Food</h3>
+        <p class="cat-card__desc">
+          Prepared meals delivered to beneficiaries who are unable to cook — due to physical
+          limitations, lack of facilities, or illness.
+        </p>
+        <p class="cat-card__meta">Once or twice daily · Up to 2 months per cycle</p>
+      </article>
+
+      <article class="cat-card">
+        <span class="cat-card__icon">🥦</span>
+        <h3 class="cat-card__title">Raw Ingredients</h3>
+        <p class="cat-card__desc">
+          Food supplies for beneficiaries who can cook but lack access to ingredients.
+          Provided weekly or bi-weekly to supplement their existing food supply.
+        </p>
+        <p class="cat-card__meta">Weekly or bi-weekly · Up to 2 months per cycle</p>
+      </article>
+
+      <article class="cat-card">
+        <span class="cat-card__icon">🤝</span>
+        <h3 class="cat-card__title">Combination</h3>
+        <p class="cat-card__desc">
+          Both cooked meals and raw ingredients, reserved for special cases such as
+          pregnancy, large families, or specific dietary requirements.
+        </p>
+        <p class="cat-card__meta">Custom schedule · Approved case-by-case</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CTA banner ─────────────────────────────────────────────── -->
+<section class="cta-section" aria-labelledby="ctaTitle">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2 class="cta-title" id="ctaTitle">Ready to register a beneficiary?</h2>
+        <p class="cta-desc">Sign in as an SSVP member to start the process.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="login.html" class="btn btn-primary btn-xl">Sign in</a>
+        <a href="#how-it-works" class="btn btn-ghost btn-xl">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Footer ─────────────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span>🍽️</span> MealsOnWheels
+    </div>
+    <p class="footer-note">
+      Built for the Saint Vincent de Paul Society · Lagos, Nigeria ·
+      <a href="https://github.com/samuelaberenika/mealsonwheels"
+         target="_blank" rel="noopener"
+         style="color:rgba(255,255,255,.5); text-decoration:underline;">
+        View on GitHub
+      </a>
+    </p>
+    <p class="footer-note">© <span id="footerYear"></span> Samuel Aberenika</p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/home.js"></script>
+<script>
+  // Wire nav login/logout visibility
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+    const session = Auth.getSession();
+    const loginBtn  = document.getElementById('navLoginBtn');
+    const userPill  = document.getElementById('navUserPill');
+    const logoutBtn = document.getElementById('navLogoutBtn');
+    if (session) {
+      loginBtn.classList.add('hidden');
+      userPill.classList.remove('hidden');
+      logoutBtn.classList.remove('hidden');
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* ── Login layout ─────────────────────────────────────────── */
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ── Brand panel (left) ───────────────────────────────────── */
+.brand-panel {
+  background: var(--green-800);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative circles */
+.brand-panel::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(244,163,54,.15), transparent 70%);
+  border-radius: 50%;
+}
+.brand-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(244,163,54,.1), transparent 70%);
+  border-radius: 50%;
+}
+
+.brand-panel__inner {
+  position: relative; z-index: 1;
+  max-width: 400px;
+  display: flex; flex-direction: column;
+  gap: 3rem;
+}
+
+.brand-logo {
+  display: flex; align-items: center; gap: 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 600; color: white;
+}
+.brand-logo__mark {
+  width: 40px; height: 40px;
+  background: var(--amber-500);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+
+.brand-body {
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+
+.brand-quote {
+  font-family: var(--font-display);
+  font-size: 1.85rem; font-weight: 400;
+  font-style: italic; line-height: 1.35;
+  color: var(--amber-500);
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--amber-500);
+}
+
+.brand-desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,.7);
+  line-height: 1.75;
+}
+
+.brand-stats {
+  display: flex; gap: 2rem;
+}
+.brand-stat { display: flex; flex-direction: column; gap: 3px; }
+.brand-stat__n {
+  font-family: var(--font-display);
+  font-size: 1.75rem; font-weight: 600;
+  color: var(--amber-500); line-height: 1;
+}
+.brand-stat__l {
+  font-size: 0.75rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .07em;
+  color: rgba(255,255,255,.5);
+}
+
+.brand-org {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,.35);
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+/* ── Form panel (right) ───────────────────────────────────── */
+.form-panel {
+  display: flex; align-items: center; justify-content: center;
+  padding: 4rem 3rem;
+  background: var(--cream-100);
+}
+
+.form-panel__inner {
+  width: 100%; max-width: 420px;
+  display: flex; flex-direction: column; gap: 2rem;
+}
+
+.form-heading { display: flex; flex-direction: column; gap: 0.35rem; }
+.form-title   { font-size: 2rem; font-weight: 600; color: var(--ink-900); }
+.form-sub     { font-size: 0.9375rem; color: var(--ink-500); }
+
+/* ── Demo box ─────────────────────────────────────────────── */
+.demo-box {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: var(--r-md);
+  padding: 1.1rem 1.25rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.demo-box__title {
+  font-size: 0.82rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em;
+  color: #166534;
+}
+.demo-pills { display: flex; gap: 0.5rem; }
+.demo-pill {
+  flex: 1; padding: 0.6rem 0.9rem;
+  background: white; border: 1.5px solid #86efac;
+  border-radius: var(--r-sm); cursor: pointer;
+  text-align: left;
+  transition: all var(--ease);
+  display: flex; flex-direction: column; gap: 2px;
+}
+.demo-pill:hover { border-color: #16a34a; transform: translateY(-1px); box-shadow: var(--shadow-xs); }
+.demo-pill__role  { font-size: 0.8rem; font-weight: 700; color: #166534; }
+.demo-pill__email { font-size: 0.75rem; color: var(--ink-500); }
+.demo-box__hint {
+  font-size: 0.75rem; color: #3d8a5e;
+}
+.demo-box__hint code {
+  background: rgba(0,0,0,.06); padding: 1px 5px;
+  border-radius: 3px; font-family: monospace; font-size: 0.8rem;
+}
+
+/* ── Login form ───────────────────────────────────────────── */
+.login-form { display: flex; flex-direction: column; gap: 1.25rem; }
+#formAlert:empty { display: none; }
+
+.form-footer {
+  text-align: center;
+  font-size: 0.85rem; color: var(--ink-500);
+  line-height: 1.7;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .login-page { grid-template-columns: 1fr; }
+  .brand-panel { display: none; }
+  .form-panel  { padding: 3rem 1.5rem; min-height: 100vh; }
+}

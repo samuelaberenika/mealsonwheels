@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register Beneficiary — MealsOnWheels</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/register.css" />
+</head>
+<body class="register-page">
+
+<!-- ── Nav ─────────────────────────────────────────────────── -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-mark">🍽️</span>
+      MealsOnWheels
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="register-beneficiary.html" class="nav-link active">Register</a></li>
+        <li id="navAdminLink" style="display:none"><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="partner-portal.html" class="nav-link">Partners</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <div class="nav-user-pill" id="navUserPill" style="display:none">
+        <div class="nav-user-avatar" id="navUserInitials">?</div>
+        <span id="navUserName">User</span>
+        <span class="nav-role-tag" id="navUserRole"></span>
+      </div>
+      <button class="btn btn-ghost btn-sm" data-action="logout">Sign out</button>
+    </div>
+  </div>
+</header>
+
+<!-- ── Page header ──────────────────────────────────────────── -->
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__inner">
+      <span class="page-header__eyebrow">SSVP Member Portal</span>
+      <h1 class="page-header__title">Register a Beneficiary</h1>
+      <p class="page-header__subtitle">
+        Complete all sections to submit a new beneficiary for society review.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ── Body ─────────────────────────────────────────────────── -->
+<main class="register-body" id="mainContent">
+  <div class="container">
+    <div class="register-inner">
+
+      <!-- ── Left: form ──────────────────────────────────── -->
+      <div>
+        <!-- Progress bar -->
+        <div class="progress-bar" id="progressBar" aria-label="Form progress">
+          <div class="progress-step active" data-step="1" id="ps1">
+            <div class="progress-step__dot">1</div>
+            <span class="progress-step__label">Personal</span>
+          </div>
+          <div class="progress-step" data-step="2" id="ps2">
+            <div class="progress-step__dot">2</div>
+            <span class="progress-step__label">Eligibility</span>
+          </div>
+          <div class="progress-step" data-step="3" id="ps3">
+            <div class="progress-step__dot">3</div>
+            <span class="progress-step__label">Meal Plan</span>
+          </div>
+          <div class="progress-step" data-step="4" id="ps4">
+            <div class="progress-step__dot">4</div>
+            <span class="progress-step__label">Review</span>
+          </div>
+        </div>
+
+        <!-- Alert area -->
+        <div id="formAlert" style="margin-bottom:1rem" role="alert" aria-live="polite"></div>
+
+        <!-- ══ FORM CARD ══════════════════════════════════ -->
+        <div class="form-card" id="formCard">
+
+          <!-- ── Step 1: Personal Details ─────────────────── -->
+          <div id="step1">
+            <div class="form-card__header">
+              <div class="form-card__icon">👤</div>
+              <div class="form-card__meta">
+                <h2 class="form-card__title">Personal Details</h2>
+                <p class="form-card__sub">Basic information about the beneficiary</p>
+              </div>
+            </div>
+
+            <div class="form-card__body">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="fullName">Full name <span aria-hidden="true">*</span></label>
+                  <input class="form-input" type="text" id="fullName" placeholder="e.g. Emeka Obi" required />
+                  <span class="form-error" id="fullNameErr"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="age">Age <span aria-hidden="true">*</span></label>
+                  <input class="form-input" type="number" id="age" min="0" max="120" placeholder="e.g. 67" required />
+                  <span class="form-error" id="ageErr"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone number</label>
+                  <p class="form-sublabel">Enter N/A if the beneficiary has no phone</p>
+                  <input class="form-input" type="tel" id="phone" placeholder="+234 801 234 5678" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="gender">Gender</label>
+                  <select class="form-select" id="gender">
+                    <option value="">— Select —</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="prefer_not_to_say">Prefer not to say</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="address">Address <span aria-hidden="true">*</span></label>
+                <input class="form-input" type="text" id="address" placeholder="e.g. 14 Balogun St, Lagos Island" required />
+                <span class="form-error" id="addressErr"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="notes">Additional notes</label>
+                <p class="form-sublabel">Any context that will help the committee make their decision</p>
+                <textarea class="form-textarea" id="notes" placeholder="e.g. Lives alone, limited mobility, referred by Father Emeka…"></textarea>
+              </div>
+            </div>
+
+            <div class="form-card__footer">
+              <span class="form-hint">Step 1 of 4</span>
+              <button class="btn btn-primary" onclick="nextStep(1)">
+                Continue <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ── Step 2: Eligibility ───────────────────────── -->
+          <div id="step2" style="display:none">
+            <div class="form-card__header">
+              <div class="form-card__icon">📋</div>
+              <div class="form-card__meta">
+                <h2 class="form-card__title">Eligibility Criteria</h2>
+                <p class="form-card__sub">Select all categories that apply to this beneficiary</p>
+              </div>
+            </div>
+
+            <div class="form-card__body">
+              <p class="form-section-label">Beneficiary category <span aria-hidden="true">*</span></p>
+              <div class="radio-grid" role="radiogroup" aria-label="Beneficiary category">
+                <div class="radio-card">
+                  <input type="radio" name="category" id="cat_elderly" value="elderly" />
+                  <label class="radio-card__label" for="cat_elderly">
+                    <span class="radio-card__icon">👴</span>
+                    <span class="radio-card__text">
+                      <span class="radio-card__name">Sick or Elderly</span>
+                      <span class="radio-card__desc">Limited or no family support available</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="radio-card">
+                  <input type="radio" name="category" id="cat_orphan" value="orphan" />
+                  <label class="radio-card__label" for="cat_orphan">
+                    <span class="radio-card__icon">🧒</span>
+                    <span class="radio-card__text">
+                      <span class="radio-card__name">Orphan / Child</span>
+                      <span class="radio-card__desc">No parental or guardian support</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="radio-card">
+                  <input type="radio" name="category" id="cat_unemployed" value="unemployed" />
+                  <label class="radio-card__label" for="cat_unemployed">
+                    <span class="radio-card__icon">💼</span>
+                    <span class="radio-card__text">
+                      <span class="radio-card__name">Unemployed</span>
+                      <span class="radio-card__desc">Recently lost income, unable to provide food</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="radio-card">
+                  <input type="radio" name="category" id="cat_homeless" value="homeless" />
+                  <label class="radio-card__label" for="cat_homeless">
+                    <span class="radio-card__icon">🏚️</span>
+                    <span class="radio-card__text">
+                      <span class="radio-card__name">Homeless</span>
+                      <span class="radio-card__desc">No access to shelter or regular food source</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="radio-card">
+                  <input type="radio" name="category" id="cat_disabled" value="disabled" />
+                  <label class="radio-card__label" for="cat_disabled">
+                    <span class="radio-card__icon">♿</span>
+                    <span class="radio-card__text">
+                      <span class="radio-card__name">Physical Disability</span>
+                      <span class="radio-card__desc">Unable to prepare or collect food independently</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="radio-card">
+                  <input type="radio" name="category" id="cat_other" value="other" />
+                  <label class="radio-card__label" for="cat_other">
+                    <span class="radio-card__icon">📝</span>
+                    <span class="radio-card__text">
+                      <span class="radio-card__name">Other</span>
+                      <span class="radio-card__desc">Described in the notes section</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <span class="form-error" id="categoryErr"></span>
+
+              <p class="form-section-label" style="margin-top:.5rem">Eligibility confirmation <span aria-hidden="true">*</span></p>
+              <div class="checkbox-group" id="eligibilityChecks">
+                <label class="checkbox-item">
+                  <input type="checkbox" id="chk1" />
+                  <span class="checkbox-item__text">
+                    This individual is currently unable to provide adequate food for themselves or their family.
+                  </span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="chk2" />
+                  <span class="checkbox-item__text">
+                    I have personally visited or spoken with this beneficiary and verified their situation.
+                  </span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="chk3" />
+                  <span class="checkbox-item__text">
+                    The information provided above is accurate to the best of my knowledge.
+                  </span>
+                </label>
+              </div>
+              <span class="form-error" id="eligibilityErr"></span>
+            </div>
+
+            <div class="form-card__footer">
+              <button class="btn btn-ghost" onclick="prevStep(2)">← Back</button>
+              <button class="btn btn-primary" onclick="nextStep(2)">
+                Continue <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ── Step 3: Meal Plan ────────────────────────── -->
+          <div id="step3" style="display:none">
+            <div class="form-card__header">
+              <div class="form-card__icon">🍽️</div>
+              <div class="form-card__meta">
+                <h2 class="form-card__title">Meal Plan</h2>
+                <p class="form-card__sub">Select the type and schedule of assistance required</p>
+              </div>
+            </div>
+
+            <div class="form-card__body">
+              <p class="form-section-label">Meal type <span aria-hidden="true">*</span></p>
+              <div class="radio-grid" role="radiogroup" aria-label="Meal type">
+                <div class="radio-card">
+                  <input type="radio" name="mealType" id="meal_cooked" value="cooked" />
+                  <label class="radio-card__label" for="meal_cooked">
+                    <span class="radio-card__icon">🍳</span>
+                    <span class="radio-card__text">
+                      <span class="radio-card__name">Cooked Food</span>
+                      <span class="radio-card__desc">Prepared meals — for those unable to cook</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="radio-card">
+                  <input type="radio" name="mealType" id="meal_raw" value="raw" />
+                  <label class="radio-card__label" for="meal_raw">
+                    <span class="radio-card__icon">🥦</span>
+                    <span class="radio-card__text">
+                      <span class="radio-card__name">Raw Ingredients</span>
+                      <span class="radio-card__desc">Food supplies — for those who can cook</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="radio-card" style="grid-column: span 2">
+                  <input type="radio" name="mealType" id="meal_combination" value="combination" />
+                  <label class="radio-card__label" for="meal_combination">
+                    <span class="radio-card__icon">🤝</span>
+                    <span class="radio-card__text">
+                      <span class="radio-card__name">Combination</span>
+                      <span class="radio-card__desc">Both cooked meals and raw ingredients — for special cases (pregnancy, large families, specific dietary needs)</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <span class="form-error" id="mealTypeErr"></span>
+
+              <div class="form-row" style="margin-top:.25rem">
+                <div class="form-group">
+                  <label class="form-label" for="mealFrequency">Delivery frequency <span aria-hidden="true">*</span></label>
+                  <select class="form-select" id="mealFrequency" required>
+                    <option value="">— Select —</option>
+                    <option value="once_daily">Once daily</option>
+                    <option value="twice_daily">Twice daily</option>
+                    <option value="thrice_daily">Three times daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="biweekly">Bi-weekly</option>
+                  </select>
+                  <span class="form-error" id="mealFrequencyErr"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="duration">Assistance duration <span aria-hidden="true">*</span></label>
+                  <select class="form-select" id="duration" required>
+                    <option value="">— Select —</option>
+                    <option value="1_week">1 week</option>
+                    <option value="2_weeks">2 weeks</option>
+                    <option value="1_month">1 month</option>
+                    <option value="6_weeks">6 weeks</option>
+                    <option value="2_months">2 months (maximum)</option>
+                  </select>
+                  <span class="form-error" id="durationErr"></span>
+                </div>
+              </div>
+
+              <div class="alert alert-info" style="margin-top:.25rem">
+                ℹ️ All assistance is capped at <strong>2 months</strong> before a renewal review is required, in line with SSVP guidelines.
+              </div>
+            </div>
+
+            <div class="form-card__footer">
+              <button class="btn btn-ghost" onclick="prevStep(3)">← Back</button>
+              <button class="btn btn-primary" onclick="nextStep(3)">
+                Review &amp; Submit <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ── Step 4: Review ────────────────────────────── -->
+          <div id="step4" style="display:none">
+            <div class="form-card__header">
+              <div class="form-card__icon">🔍</div>
+              <div class="form-card__meta">
+                <h2 class="form-card__title">Review &amp; Submit</h2>
+                <p class="form-card__sub">Check all details before submitting for committee review</p>
+              </div>
+            </div>
+
+            <div class="form-card__body" id="reviewBody">
+              <!-- Populated by JS -->
+            </div>
+
+            <div class="form-card__footer">
+              <button class="btn btn-ghost" onclick="prevStep(4)">← Edit</button>
+              <button class="btn btn-primary btn-lg" id="submitBtn" onclick="submitForm()">
+                <span id="submitText">Submit for review</span>
+                <span id="submitSpin" class="spinner hidden" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ── Success screen ──────────────────────────── -->
+          <div class="success-screen" id="successScreen">
+            <div class="success-icon">✓</div>
+            <h2 class="success-title">Registration submitted!</h2>
+            <p class="success-desc">
+              The beneficiary has been added to the review queue.
+              The society committee will assess this submission at the next meeting.
+            </p>
+            <p class="success-ref">Reference: <code id="successRef">—</code></p>
+            <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-top:.5rem">
+              <a href="register-beneficiary.html" class="btn btn-primary">Register another</a>
+              <a href="index.html" class="btn btn-outline">Back to home</a>
+            </div>
+          </div>
+
+        </div><!-- /form-card -->
+      </div><!-- /left col -->
+
+      <!-- ── Right: sidebar ──────────────────────────────── -->
+      <aside class="sidebar">
+
+        <div class="sidebar-card">
+          <div class="sidebar-card__header">📌 Eligibility criteria</div>
+          <div class="sidebar-card__body">
+            <div class="eligibility-list">
+              <div class="eligibility-item">Recently lost job or has no sustainable income</div>
+              <div class="eligibility-item">Lacks a support system (orphan, homeless)</div>
+              <div class="eligibility-item">Sick or elderly with limited family support</div>
+              <div class="eligibility-item">Physical disability preventing independent food access</div>
+              <div class="eligibility-item">Anyone unable to feed themselves daily</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card__header">ℹ️ Submission process</div>
+          <div class="sidebar-card__body">
+            <div class="info-row">
+              <span class="info-label">After submission</span>
+              <span class="info-val">Goes into the committee review queue</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Review timing</span>
+              <span class="info-val">Next scheduled society meeting</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Decision by</span>
+              <span class="info-val">SSVP President &amp; Secretary</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Max duration</span>
+              <span class="info-val">2 months before renewal required</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card__header">🔒 Data &amp; Privacy</div>
+          <div class="sidebar-card__body">
+            <p style="font-size:.85rem;color:var(--ink-500);line-height:1.65">
+              All beneficiary data is stored locally on this device only.
+              No personal information is transmitted externally.
+              Handle all beneficiary details with strict confidentiality.
+            </p>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">🍽️ MealsOnWheels</div>
+    <p class="footer-note">Saint Vincent de Paul Society · Lagos, Nigeria</p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>
