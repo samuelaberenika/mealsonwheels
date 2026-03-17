@@ -15,7 +15,13 @@
   <div class="nav-inner">
 
     <a href="index.html" class="nav-brand">
-      <span class="nav-brand-mark">🍽️</span>
+      <span class="nav-brand-mark" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+          <path d="M7 2v20"/>
+          <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+        </svg>
+      </span>
       MealsOnWheels
     </a>
 
@@ -29,10 +35,7 @@
     </nav>
 
     <div class="nav-actions">
-      <!-- Guest state -->
       <a href="login.html" class="btn btn-primary btn-sm" id="navLoginBtn">Sign in</a>
-
-      <!-- Logged-in state (hidden until JS runs) -->
       <div class="nav-user-pill hidden" id="navUserPill">
         <div class="nav-user-avatar" id="navUserInitials">?</div>
         <span id="navUserName">User</span>
@@ -54,12 +57,10 @@
 
       <div class="hero-content anim-fiu">
         <p class="hero-eyebrow">
-          <span>●</span> Saint Vincent de Paul Society
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><circle cx="4" cy="4" r="4"/></svg>
+          Saint Vincent de Paul Society
         </p>
-        <p class="hero-greeting hidden" id="heroGreeting" style="
-          font-size:.95rem; color:rgba(255,255,255,.65);
-          margin-bottom:.5rem; font-weight:500;
-        "></p>
+        <p class="hero-greeting hidden" id="heroGreeting" style="font-size:.95rem; color:rgba(255,255,255,.65); margin-bottom:.5rem; font-weight:500;"></p>
         <h1 class="hero-title" id="heroTitle">
           Delivering <em>dignity</em><br />
           through daily meals
@@ -119,6 +120,53 @@
 </section>
 
 
+<!-- ── Mission ───────────────────────────────────────────────── -->
+<section class="mission-section" aria-labelledby="missionTitle">
+  <div class="container">
+    <div class="mission-inner">
+
+      <div class="mission-text anim-fiu">
+        <p class="section-eyebrow">Our mission</p>
+        <h2 class="section-title" id="missionTitle">Fighting hunger in Lagos,<br />one meal at a time</h2>
+        <p class="mission-desc">
+          Lagos State, home to over 25 million residents, faces a food security crisis.
+          An estimated <strong>2 in every 10 people</strong> lack access to a nutritious
+          meal each day — a burden deepened by widespread poverty and the lasting impact
+          of the COVID-19 pandemic.
+        </p>
+        <p class="mission-desc">
+          The <strong>Meals on Wheels programme</strong>, run by the Saint Vincent de Paul
+          Society (SSVP), mobilises resources to provide daily meals to orphans, the sick
+          and elderly, persons with disabilities, and the unemployed — ensuring no one
+          goes to bed hungry.
+        </p>
+        <a href="#who-we-help" class="btn btn-outline">Who we help</a>
+      </div>
+
+      <div class="mission-highlights anim-fiu anim-fiu-d2" aria-hidden="true">
+        <div class="highlight-card highlight-card--green">
+          <span class="highlight-n">25M+</span>
+          <span class="highlight-l">Lagos residents</span>
+        </div>
+        <div class="highlight-card highlight-card--amber">
+          <span class="highlight-n">2 in 10</span>
+          <span class="highlight-l">Without daily nutrition</span>
+        </div>
+        <div class="highlight-card highlight-card--green">
+          <span class="highlight-n">4</span>
+          <span class="highlight-l">Beneficiary categories served</span>
+        </div>
+        <div class="highlight-card highlight-card--amber">
+          <span class="highlight-n">3</span>
+          <span class="highlight-l">Types of meal assistance</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- ── Live stats strip ──────────────────────────────────────── -->
 <section class="stats-strip" aria-label="Programme statistics">
   <div class="container">
@@ -157,8 +205,16 @@
     </div>
 
     <div class="steps-grid">
+
       <article class="step-card anim-fiu">
-        <div class="step-card__icon step-card__icon--green">📋</div>
+        <div class="step-card__icon step-card__icon--green">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+            <path d="M12 11h4"/><path d="M12 16h4"/>
+            <path d="M8 11h.01"/><path d="M8 16h.01"/>
+          </svg>
+        </div>
         <p class="step-card__num">Step 01</p>
         <h3 class="step-card__title">Registration</h3>
         <p class="step-card__desc">
@@ -169,7 +225,12 @@
       </article>
 
       <article class="step-card anim-fiu anim-fiu-d1">
-        <div class="step-card__icon step-card__icon--amber">🔍</div>
+        <div class="step-card__icon step-card__icon--amber">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+        </div>
         <p class="step-card__num">Step 02</p>
         <h3 class="step-card__title">Review &amp; Approval</h3>
         <p class="step-card__desc">
@@ -180,7 +241,14 @@
       </article>
 
       <article class="step-card anim-fiu anim-fiu-d2">
-        <div class="step-card__icon step-card__icon--teal">🚴</div>
+        <div class="step-card__icon step-card__icon--teal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/>
+            <rect width="7" height="7" x="14" y="10" rx="1"/>
+            <circle cx="7.5" cy="17.5" r="2.5"/>
+            <circle cx="17.5" cy="17.5" r="2.5"/>
+          </svg>
+        </div>
         <p class="step-card__num">Step 03</p>
         <h3 class="step-card__title">Confirmation &amp; Delivery</h3>
         <p class="step-card__desc">
@@ -188,6 +256,7 @@
           schedule, and assigned logistics partner. Deliveries begin as confirmed.
         </p>
       </article>
+
     </div>
   </div>
 </section>
@@ -205,8 +274,13 @@
     </div>
 
     <div class="categories-grid">
+
       <article class="cat-card">
-        <span class="cat-card__icon">🍳</span>
+        <div class="cat-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--amber-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+          </svg>
+        </div>
         <h3 class="cat-card__title">Cooked Food</h3>
         <p class="cat-card__desc">
           Prepared meals delivered to beneficiaries who are unable to cook — due to physical
@@ -216,7 +290,12 @@
       </article>
 
       <article class="cat-card">
-        <span class="cat-card__icon">🥦</span>
+        <div class="cat-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--amber-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+          </svg>
+        </div>
         <h3 class="cat-card__title">Raw Ingredients</h3>
         <p class="cat-card__desc">
           Food supplies for beneficiaries who can cook but lack access to ingredients.
@@ -226,7 +305,11 @@
       </article>
 
       <article class="cat-card">
-        <span class="cat-card__icon">🤝</span>
+        <div class="cat-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--amber-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </div>
         <h3 class="cat-card__title">Combination</h3>
         <p class="cat-card__desc">
           Both cooked meals and raw ingredients, reserved for special cases such as
@@ -234,6 +317,162 @@
         </p>
         <p class="cat-card__meta">Custom schedule · Approved case-by-case</p>
       </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Who we help ────────────────────────────────────────────── -->
+<section class="eligibility-section" id="who-we-help" aria-labelledby="eligTitle">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Beneficiary eligibility</p>
+      <h2 class="section-title" id="eligTitle">Who we help</h2>
+      <p class="section-desc">
+        Only SSVP members may register beneficiaries. Applicants must meet one or more
+        of the following criteria.
+      </p>
+    </div>
+
+    <div class="eligibility-grid">
+
+      <article class="elig-card">
+        <div class="elig-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <h3 class="elig-card__title">Job loss or no income</h3>
+        <p class="elig-card__desc">
+          Individuals who have recently lost their job or have no sustainable means of
+          income and cannot provide food for themselves or their families.
+        </p>
+      </article>
+
+      <article class="elig-card">
+        <div class="elig-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3 class="elig-card__title">No support system</h3>
+        <p class="elig-card__desc">
+          People who lack a support network — including orphans and children from families
+          with no means of providing a minimum food ration.
+        </p>
+      </article>
+
+      <article class="elig-card">
+        <div class="elig-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <h3 class="elig-card__title">Homeless, sick, or elderly</h3>
+        <p class="elig-card__desc">
+          Homeless individuals with no food access, and sick or elderly persons with
+          no or limited support from family members.
+        </p>
+      </article>
+
+      <article class="elig-card">
+        <div class="elig-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+            <line x1="6" x2="6" y1="1" y2="4"/>
+            <line x1="10" x2="10" y1="1" y2="4"/>
+            <line x1="14" x2="14" y1="1" y2="4"/>
+          </svg>
+        </div>
+        <h3 class="elig-card__title">Unable to self-feed</h3>
+        <p class="elig-card__desc">
+          Anyone who is unable to feed themselves and requires daily assistance with food
+          due to physical disability or other severe circumstances.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Partners ───────────────────────────────────────────────── -->
+<section class="partners-section" aria-labelledby="partnersTitle">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Our network</p>
+      <h2 class="section-title" id="partnersTitle">Partners who make it possible</h2>
+      <p class="section-desc">
+        The Meals on Wheels service depends on a network of trusted partners committed
+        to quality, reliability, and compassion.
+      </p>
+    </div>
+
+    <div class="partners-grid">
+
+      <article class="partner-card">
+        <div class="partner-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" x2="21" y1="6" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
+        <h3 class="partner-card__title">Food Vendors</h3>
+        <p class="partner-card__type">Cooked meal suppliers</p>
+        <ul class="partner-card__list">
+          <li>Reasonable and affordable pricing</li>
+          <li>High standards of food hygiene</li>
+          <li>Weekly or monthly payment schedule</li>
+          <li>Capacity to supply for 5+ days during payment delays</li>
+        </ul>
+      </article>
+
+      <article class="partner-card partner-card--featured">
+        <div class="partner-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--green-800)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m7.5 4.27 9 5.15"/>
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+            <path d="m3.3 7 8.7 5 8.7-5"/>
+            <path d="M12 22V12"/>
+          </svg>
+        </div>
+        <h3 class="partner-card__title">Grocery Stores</h3>
+        <p class="partner-card__type">Raw ingredient suppliers</p>
+        <ul class="partner-card__list">
+          <li>Credit facility for minimum 1 week during delays</li>
+          <li>Fresh, high-quality foodstuffs</li>
+          <li>Reliable stock of staple ingredients</li>
+          <li>Flexible billing arrangements</li>
+        </ul>
+      </article>
+
+      <article class="partner-card">
+        <div class="partner-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/>
+            <rect width="7" height="7" x="14" y="10" rx="1"/>
+            <circle cx="7.5" cy="17.5" r="2.5"/>
+            <circle cx="17.5" cy="17.5" r="2.5"/>
+          </svg>
+        </div>
+        <h3 class="partner-card__title">Logistics Partners</h3>
+        <p class="partner-card__type">Delivery &amp; transport</p>
+        <ul class="partner-card__list">
+          <li>Timely and safe meal delivery</li>
+          <li>Professional, courteous service</li>
+          <li>Internal or contracted riders</li>
+          <li>Reliable availability for daily runs</li>
+        </ul>
+      </article>
+
     </div>
   </div>
 </section>
@@ -260,7 +499,12 @@
 <footer class="footer" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-brand">
-      <span>🍽️</span> MealsOnWheels
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+        <path d="M7 2v20"/>
+        <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+      </svg>
+      MealsOnWheels
     </div>
     <p class="footer-note">
       Built for the Saint Vincent de Paul Society · Lagos, Nigeria ·
@@ -278,7 +522,6 @@
 <script src="js/auth.js"></script>
 <script src="js/home.js"></script>
 <script>
-  // Wire nav login/logout visibility
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('footerYear').textContent = new Date().getFullYear();
     const session = Auth.getSession();

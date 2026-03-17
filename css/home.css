@@ -199,8 +199,11 @@ body.is-logged-in .hero-cta-auth  { display: flex; }
   display: flex; flex-direction: column; gap: 0.75rem;
   transition: background var(--ease);
 }
-.cat-card:hover { background: rgba(255,255,255,.12); }
-.cat-card__icon { font-size: 1.75rem; }
+.cat-card:hover { background: rgba(255,255,255,.12); cursor: pointer; }
+.cat-card__icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+}
 .cat-card__title { font-size: 1.05rem; font-weight: 600; color: var(--amber-400); }
 .cat-card__desc  { font-size: 0.875rem; color: rgba(255,255,255,.65); line-height: 1.7; }
 .cat-card__meta  {
@@ -227,6 +230,163 @@ body.is-logged-in .hero-cta-auth  { display: flex; }
 .cta-desc { font-size: 0.975rem; color: rgba(10,36,25,.65); }
 .cta-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
+/* ── Mission ──────────────────────────────────────────────── */
+.mission-section {
+  background: var(--cream-100);
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--ink-300);
+}
+.mission-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+}
+.mission-text { display: flex; flex-direction: column; gap: 1.25rem; }
+.mission-text .section-title { text-align: left; }
+.mission-text .section-eyebrow { text-align: left; }
+.mission-desc {
+  font-size: 0.975rem; color: var(--ink-500);
+  line-height: 1.8; max-width: 520px;
+}
+.mission-desc strong { color: var(--ink-900); }
+
+.mission-highlights {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.highlight-card {
+  border-radius: var(--r-md);
+  padding: 1.75rem 1.5rem;
+  display: flex; flex-direction: column; gap: 0.4rem;
+  border: 1px solid transparent;
+}
+.highlight-card--green {
+  background: var(--green-50);
+  border-color: var(--green-100);
+}
+.highlight-card--amber {
+  background: var(--amber-100);
+  border-color: #f8d48a;
+}
+.highlight-n {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 600; line-height: 1;
+  color: var(--green-800);
+}
+.highlight-l {
+  font-size: 0.82rem; color: var(--ink-500);
+  font-weight: 500; line-height: 1.4;
+}
+
+/* ── Eligibility ──────────────────────────────────────────── */
+.eligibility-section {
+  background: var(--white);
+  padding: 5rem 0;
+  border-top: 1px solid var(--ink-300);
+}
+.eligibility-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.elig-card {
+  background: var(--cream-100);
+  border: 1px solid var(--ink-300);
+  border-radius: var(--r-md);
+  padding: 2rem 1.75rem;
+  display: flex; flex-direction: column; gap: 0.85rem;
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+.elig-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.elig-card__icon {
+  width: 46px; height: 46px;
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.elig-card__title {
+  font-size: 1rem; font-weight: 600;
+  color: var(--ink-900);
+}
+.elig-card__desc {
+  font-size: 0.875rem; color: var(--ink-500);
+  line-height: 1.7;
+}
+
+/* ── Partners ─────────────────────────────────────────────── */
+.partners-section {
+  background: var(--green-50);
+  padding: 5rem 0;
+  border-top: 1px solid var(--green-100);
+  border-bottom: 1px solid var(--green-100);
+}
+.partners-section .section-eyebrow { color: var(--green-700); }
+.partners-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.partner-card {
+  background: var(--white);
+  border: 1px solid var(--ink-300);
+  border-radius: var(--r-md);
+  padding: 2rem 1.75rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+.partner-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.partner-card--featured {
+  background: var(--green-800); color: white;
+  border-color: var(--green-800);
+}
+.partner-card__icon {
+  width: 52px; height: 52px;
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.partner-card--featured .partner-card__icon {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.2);
+}
+.partner-card--featured .partner-card__icon svg { stroke: white; }
+.partner-card__title {
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--ink-900);
+}
+.partner-card--featured .partner-card__title { color: white; }
+.partner-card__type {
+  font-size: 0.78rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .06em;
+  color: var(--green-700);
+}
+.partner-card--featured .partner-card__type { color: var(--amber-400); }
+.partner-card__list {
+  list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.partner-card__list li {
+  font-size: 0.875rem; color: var(--ink-500);
+  padding-left: 1rem; position: relative; line-height: 1.5;
+}
+.partner-card__list li::before {
+  content: '';
+  position: absolute; left: 0; top: 0.55em;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--green-600);
+}
+.partner-card--featured .partner-card__list li { color: rgba(255,255,255,.7); }
+.partner-card--featured .partner-card__list li::before { background: var(--amber-400); }
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 900px) {
   .hero-inner          { grid-template-columns: 1fr; }
@@ -235,8 +395,15 @@ body.is-logged-in .hero-cta-auth  { display: flex; }
   .steps-grid          { grid-template-columns: 1fr; }
   .categories-grid     { grid-template-columns: 1fr; }
   .cta-inner           { flex-direction: column; }
+  .mission-inner       { grid-template-columns: 1fr; gap: 3rem; }
+  .partners-grid       { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .eligibility-grid    { grid-template-columns: 1fr; }
+  .mission-highlights  { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 480px) {
   .stats-strip__inner  { grid-template-columns: 1fr 1fr; }
   .hero                { padding: 4rem 0 3.5rem; }
+  .mission-highlights  { grid-template-columns: 1fr; }
 }

@@ -13,7 +13,13 @@
 <header class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-brand">
-      <span class="nav-brand-mark">🍽️</span>
+      <span class="nav-brand-mark" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+          <path d="M7 2v20"/>
+          <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+        </svg>
+      </span>
       MealsOnWheels
     </a>
     <nav aria-label="Main">
@@ -84,7 +90,12 @@
           <!-- ── Step 1: Personal Details ─────────────────── -->
           <div id="step1">
             <div class="form-card__header">
-              <div class="form-card__icon">👤</div>
+              <div class="form-card__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
               <div class="form-card__meta">
                 <h2 class="form-card__title">Personal Details</h2>
                 <p class="form-card__sub">Basic information about the beneficiary</p>
@@ -146,7 +157,13 @@
           <!-- ── Step 2: Eligibility ───────────────────────── -->
           <div id="step2" style="display:none">
             <div class="form-card__header">
-              <div class="form-card__icon">📋</div>
+              <div class="form-card__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                  <path d="m9 14 2 2 4-4"/>
+                </svg>
+              </div>
               <div class="form-card__meta">
                 <h2 class="form-card__title">Eligibility Criteria</h2>
                 <p class="form-card__sub">Select all categories that apply to this beneficiary</p>
@@ -156,66 +173,111 @@
             <div class="form-card__body">
               <p class="form-section-label">Beneficiary category <span aria-hidden="true">*</span></p>
               <div class="radio-grid" role="radiogroup" aria-label="Beneficiary category">
+
                 <div class="radio-card">
                   <input type="radio" name="category" id="cat_elderly" value="elderly" />
                   <label class="radio-card__label" for="cat_elderly">
-                    <span class="radio-card__icon">👴</span>
+                    <span class="radio-card__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                      </svg>
+                    </span>
                     <span class="radio-card__text">
                       <span class="radio-card__name">Sick or Elderly</span>
                       <span class="radio-card__desc">Limited or no family support available</span>
                     </span>
                   </label>
                 </div>
+
                 <div class="radio-card">
                   <input type="radio" name="category" id="cat_orphan" value="orphan" />
                   <label class="radio-card__label" for="cat_orphan">
-                    <span class="radio-card__icon">🧒</span>
+                    <span class="radio-card__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                      </svg>
+                    </span>
                     <span class="radio-card__text">
                       <span class="radio-card__name">Orphan / Child</span>
                       <span class="radio-card__desc">No parental or guardian support</span>
                     </span>
                   </label>
                 </div>
+
                 <div class="radio-card">
                   <input type="radio" name="category" id="cat_unemployed" value="unemployed" />
                   <label class="radio-card__label" for="cat_unemployed">
-                    <span class="radio-card__icon">💼</span>
+                    <span class="radio-card__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                      </svg>
+                    </span>
                     <span class="radio-card__text">
                       <span class="radio-card__name">Unemployed</span>
                       <span class="radio-card__desc">Recently lost income, unable to provide food</span>
                     </span>
                   </label>
                 </div>
+
                 <div class="radio-card">
                   <input type="radio" name="category" id="cat_homeless" value="homeless" />
                   <label class="radio-card__label" for="cat_homeless">
-                    <span class="radio-card__icon">🏚️</span>
+                    <span class="radio-card__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                      </svg>
+                    </span>
                     <span class="radio-card__text">
                       <span class="radio-card__name">Homeless</span>
                       <span class="radio-card__desc">No access to shelter or regular food source</span>
                     </span>
                   </label>
                 </div>
+
                 <div class="radio-card">
                   <input type="radio" name="category" id="cat_disabled" value="disabled" />
                   <label class="radio-card__label" for="cat_disabled">
-                    <span class="radio-card__icon">♿</span>
+                    <span class="radio-card__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="16" cy="4" r="1"/>
+                        <path d="m18 19 1-7-6 1"/>
+                        <path d="m5 8 3-3 5.5 3-2.36 3.5"/>
+                        <path d="M4.24 14.5a5 5 0 0 0 6.88 6"/>
+                        <path d="M13.76 17.5a5 5 0 0 0-6.88-6"/>
+                      </svg>
+                    </span>
                     <span class="radio-card__text">
                       <span class="radio-card__name">Physical Disability</span>
                       <span class="radio-card__desc">Unable to prepare or collect food independently</span>
                     </span>
                   </label>
                 </div>
+
                 <div class="radio-card">
                   <input type="radio" name="category" id="cat_other" value="other" />
                   <label class="radio-card__label" for="cat_other">
-                    <span class="radio-card__icon">📝</span>
+                    <span class="radio-card__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" x2="8" y1="13" y2="13"/>
+                        <line x1="16" x2="8" y1="17" y2="17"/>
+                        <line x1="10" x2="8" y1="9" y2="9"/>
+                      </svg>
+                    </span>
                     <span class="radio-card__text">
                       <span class="radio-card__name">Other</span>
                       <span class="radio-card__desc">Described in the notes section</span>
                     </span>
                   </label>
                 </div>
+
               </div>
               <span class="form-error" id="categoryErr"></span>
 
@@ -254,7 +316,13 @@
           <!-- ── Step 3: Meal Plan ────────────────────────── -->
           <div id="step3" style="display:none">
             <div class="form-card__header">
-              <div class="form-card__icon">🍽️</div>
+              <div class="form-card__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                  <path d="M7 2v20"/>
+                  <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+                </svg>
+              </div>
               <div class="form-card__meta">
                 <h2 class="form-card__title">Meal Plan</h2>
                 <p class="form-card__sub">Select the type and schedule of assistance required</p>
@@ -264,36 +332,53 @@
             <div class="form-card__body">
               <p class="form-section-label">Meal type <span aria-hidden="true">*</span></p>
               <div class="radio-grid" role="radiogroup" aria-label="Meal type">
+
                 <div class="radio-card">
                   <input type="radio" name="mealType" id="meal_cooked" value="cooked" />
                   <label class="radio-card__label" for="meal_cooked">
-                    <span class="radio-card__icon">🍳</span>
+                    <span class="radio-card__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                      </svg>
+                    </span>
                     <span class="radio-card__text">
                       <span class="radio-card__name">Cooked Food</span>
                       <span class="radio-card__desc">Prepared meals — for those unable to cook</span>
                     </span>
                   </label>
                 </div>
+
                 <div class="radio-card">
                   <input type="radio" name="mealType" id="meal_raw" value="raw" />
                   <label class="radio-card__label" for="meal_raw">
-                    <span class="radio-card__icon">🥦</span>
+                    <span class="radio-card__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                      </svg>
+                    </span>
                     <span class="radio-card__text">
                       <span class="radio-card__name">Raw Ingredients</span>
                       <span class="radio-card__desc">Food supplies — for those who can cook</span>
                     </span>
                   </label>
                 </div>
+
                 <div class="radio-card" style="grid-column: span 2">
                   <input type="radio" name="mealType" id="meal_combination" value="combination" />
                   <label class="radio-card__label" for="meal_combination">
-                    <span class="radio-card__icon">🤝</span>
+                    <span class="radio-card__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                      </svg>
+                    </span>
                     <span class="radio-card__text">
                       <span class="radio-card__name">Combination</span>
                       <span class="radio-card__desc">Both cooked meals and raw ingredients — for special cases (pregnancy, large families, specific dietary needs)</span>
                     </span>
                   </label>
                 </div>
+
               </div>
               <span class="form-error" id="mealTypeErr"></span>
 
@@ -324,8 +409,13 @@
                 </div>
               </div>
 
-              <div class="alert alert-info" style="margin-top:.25rem">
-                ℹ️ All assistance is capped at <strong>2 months</strong> before a renewal review is required, in line with SSVP guidelines.
+              <div class="alert alert-info" style="margin-top:.25rem; display:flex; align-items:flex-start; gap:.5rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 16v-4"/>
+                  <path d="M12 8h.01"/>
+                </svg>
+                All assistance is capped at <strong>2 months</strong> before a renewal review is required, in line with SSVP guidelines.
               </div>
             </div>
 
@@ -340,7 +430,12 @@
           <!-- ── Step 4: Review ────────────────────────────── -->
           <div id="step4" style="display:none">
             <div class="form-card__header">
-              <div class="form-card__icon">🔍</div>
+              <div class="form-card__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="m21 21-4.3-4.3"/>
+                </svg>
+              </div>
               <div class="form-card__meta">
                 <h2 class="form-card__title">Review &amp; Submit</h2>
                 <p class="form-card__sub">Check all details before submitting for committee review</p>
@@ -382,7 +477,12 @@
       <aside class="sidebar">
 
         <div class="sidebar-card">
-          <div class="sidebar-card__header">📌 Eligibility criteria</div>
+          <div class="sidebar-card__header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>
+            </svg>
+            Eligibility criteria
+          </div>
           <div class="sidebar-card__body">
             <div class="eligibility-list">
               <div class="eligibility-item">Recently lost job or has no sustainable income</div>
@@ -395,7 +495,14 @@
         </div>
 
         <div class="sidebar-card">
-          <div class="sidebar-card__header">ℹ️ Submission process</div>
+          <div class="sidebar-card__header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4"/>
+              <path d="M12 8h.01"/>
+            </svg>
+            Submission process
+          </div>
           <div class="sidebar-card__body">
             <div class="info-row">
               <span class="info-label">After submission</span>
@@ -417,7 +524,13 @@
         </div>
 
         <div class="sidebar-card">
-          <div class="sidebar-card__header">🔒 Data &amp; Privacy</div>
+          <div class="sidebar-card__header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            Data &amp; Privacy
+          </div>
           <div class="sidebar-card__body">
             <p style="font-size:.85rem;color:var(--ink-500);line-height:1.65">
               All beneficiary data is stored locally on this device only.
@@ -435,7 +548,14 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-brand">🍽️ MealsOnWheels</div>
+    <div class="footer-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+        <path d="M7 2v20"/>
+        <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+      </svg>
+      MealsOnWheels
+    </div>
     <p class="footer-note">Saint Vincent de Paul Society · Lagos, Nigeria</p>
   </div>
 </footer>
